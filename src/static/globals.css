@@ -1,0 +1,32 @@
+:root {
+    color-scheme: dark;
+}
+
+html,
+body {
+    font-family: 'Inter', 'Nunito Sans', 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #111827;
+}
+
+a {
+    color: #60a5fa;
+    transition: color 120ms ease-in-out;
+}
+
+a:hover {
+    color: #3b82f6;
+}
+
+button {
+    cursor: pointer;
+}
+
+.focus-ring {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}

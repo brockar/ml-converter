@@ -1,0 +1,22 @@
+services:
+  ml-converter:
+    build: .
+    environment:
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - SECRET_KEY=${SECRET_KEY:-change-this-in-production}
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      # HTTP Router
+      - "traefik.http.routers.ml-converter.rule=Host(`${DOMAIN:-localhost}`)"
+      - "traefik.http.routers.ml-converter.entrypoints=websecure"
+      - "traefik.http.routers.ml-converter.tls.certresolver=letsencrypt"
+      - "traefik.http.services.ml-converter.loadbalancer.server.port=5000"
+      # Optional: File size limit for uploads (16MB)
+      - "traefik.http.middlewares.ml-converter-limit.buffering.maxRequestBodyBytes=16777216"
+      - "traefik.http.routers.ml-converter.middlewares=ml-converter-limit"
+networks:
+  proxy:
+    external: true

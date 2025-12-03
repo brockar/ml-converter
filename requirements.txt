@@ -1,0 +1,9 @@
+Flask==3.1.2
+pandas==2.3.3
+openpyxl==3.1.5
+xlrd==2.0.2
+APScheduler==3.11.1
+Werkzeug==3.1.4
+gunicorn==23.0.0
+XlsxWriter==3.2.9
+pytest==9.0.1
