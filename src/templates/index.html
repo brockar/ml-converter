@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='globals.css') }}">
 </head>
 
-<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen py-12">
-    <div class="max-w-2xl mx-auto">
-        <!-- Card: Upload -->
-        <div class="bg-gray-900 bg-opacity-80 border border-gray-700 rounded-2xl shadow-xl p-8 mb-8">
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen page-body-pad">
+    <div class="page-container">
+        <div class="bg-gray-900 bg-opacity-80 border border-gray-700 rounded-2xl shadow-xl card-pad-lg mb-tight">
             <div class="text-center mb-8">
                 <h1 class="text-4xl font-extrabold text-white mb-2">ML Converter</h1>
                 <p class="text-gray-300 text-lg">Convertí tu resumen de Mercado Pago para que sea legible en Excel</p>
@@ -61,8 +60,23 @@
             </form>
         </div>
 
-        <!-- Card: Cómo funciona -->
-        <div class="bg-gray-900 bg-opacity-80 border border-gray-700 rounded-2xl shadow-xl p-6">
+        <div class="bg-gray-900 bg-opacity-80 border border-gray-700 rounded-2xl shadow-xl card-pad-md mb-tight">
+                <a
+                    class="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 text-sm font-semibold"
+                    href="https://www.mercadopago.com.ar/balance/reports/settlement_v2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ir a Reportes de Mercado Pago
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0-7L10 14m-4 7h12a2 2 0 002-2V9" />
+                    </svg>
+                </a>
+
+                <p class="text-sm text-gray-200 break-words">Mercado Pago → Informes y facturación → Reporte de tus cobros y extractos de cuenta → Todas las transacciones → <span class="font-semibold">CREAR REPORTE</span></p>
+        </div>
+
+        <div class="bg-gray-900 bg-opacity-80 border border-gray-700 rounded-2xl shadow-xl card-pad-md">
             <h2 class="text-lg font-bold text-white mb-4">Cómo funciona:</h2>
             <ul class="space-y-2 text-gray-200 text-sm pl-4 list-disc">
                 <li>Subí tu archivo de resumen de Mercado Libre/Pago (.xlsx o .xls).</li>
